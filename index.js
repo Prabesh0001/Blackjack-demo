@@ -12,6 +12,14 @@ let messageEl= document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
+let player = {
+    name : "Superman",
+    chips : 88
+}
+
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + " : $" + player.chips;
+
 function startGame() {
     isAlive = true;
     let firstCard = randomNumber2to11();
@@ -42,7 +50,7 @@ function renderGame() {
 }
 
 function newCard() {
-    if(isAlive==true && hasblackjack==false){
+    if(isAlive===true && hasblackjack===false){
         let newCard = randomNumber2to11();
         sum += newCard;
         cards.push(newCard)
